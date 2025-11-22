@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo Arputha Raj - Full Stack Engineer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap');
+
+        /* Color Palette */
+        :root {
+            --primary-color: #007bff;
+            /* Blue */
+            --secondary-color: #6c757d;
+            /* Gray */
+            --success-color: #28a745;
+            /* Green for project titles */
+            --info-color: #17a2b8;
+            /* Teal for skills badges */
+            --dark-color: #343a40;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --border-color: #e9ecef;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        /* --- Header Section --- */
+        .header-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #0056b3 100%);
+            /* Blue gradient */
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+            /* To contain any potential background effects */
+        }
+
+        .header-section h1 {
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .header-section .lead {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .header-section hr {
+            border-top: 2px solid rgba(255, 255, 255, 0.5);
+            width: 100px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info span {
+            font-size: 0.95rem;
+            display: inline-flex;
+            /* Align icon and text */
+            align-items: center;
+        }
+
+        .contact-info i {
+            margin-right: 8px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .contact-info a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .contact-info a:hover {
+            color: #cce5ff !important;
+            text-decoration: underline;
+        }
+
+        /* Profile Image Styling */
+        .profile-image-container {
+            width: 180px;
+            /* Adjust size as needed */
+            height: 180px;
+            margin: 0 auto 20px auto;
+            border: 5px solid rgba(255, 255, 255, 0.8);
+            /* White border */
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.3);
+            /* Outer glow effect */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .profile-image-container:hover {
+            transform: scale(1.05);
+            /* Slight zoom on hover */
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Ensures the image covers the circle without distortion */
+        }
+
+        /* --- Main Content Sections --- */
+        .section-card {
+            border-left: 6px solid var(--primary-color);
+            /* Stronger accent bar */
+            padding: 2.5rem;
+            /* More padding */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border-radius: 0.75rem !important;
+            /* Larger border-radius */
+        }
+
+        .section-card:hover {
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1) !important;
+            /* More pronounced shadow */
+            transform: translateY(-5px);
+            /* Lift effect */
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary-color) !important;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
+            margin-bottom: 1.8rem;
+            display: flex;
+            /* For icon alignment */
+            align-items: center;
+            gap: 10px;
+            /* Space between icon and text */
+        }
+
+        .section-title i {
+            color: var(--primary-color);
+        }
+
+        /* Objective Text */
+        #objective p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Skill Boxes */
+        .skill-box {
+            background-color: var(--light-bg);
+            border: 1px solid var(--border-color) !important;
+            border-radius: 0.5rem !important;
+            padding: 1rem;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .skill-box:hover {
+            background-color: #e9f5ff;
+            /* Lighter primary hover */
+            border-color: var(--primary-color) !important;
+        }
+
+        .skill-box h5 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-box p {
+            font-size: 0.95rem;
+        }
+
+        /* Project Cards */
+        .project-card-item {
+            border-left: 4px solid var(--success-color);
+            /* Stronger green accent */
+            border-radius: 0.5rem !important;
+            box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05) !important;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .project-card-item:hover {
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .project-card-item .card-title {
+            color: var(--success-color);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .project-card-item ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1rem;
+        }
+
+        .project-card-item li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .project-card-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .project-card-item a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        .project-card-item .card-body i {
+            color: var(--secondary-color);
+        }
+
+        /* Education Section */
+        .education-item h5 {
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+
+        .education-item .date-badge {
+            background-color: var(--secondary-color) !important;
+            font-size: 0.85rem;
+            padding: 0.4em 0.7em;
+        }
+
+        /* Key Skills Badges */
+        .skill-badge {
+            background-color: var(--info-color) !important;
+            color: var(--white);
+            padding: 0.7em 1em;
+            font-size: 0.9rem;
+            border-radius: 0.3rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .skill-badge:hover {
+            background-color: #138496 !important;
+            /* Darker teal on hover */
+        }
+
+        /* Languages List */
+        .language-list li {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color) !important;
+            color: var(--light-bg);
+            padding: 25px 0;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .header-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .header-section .lead {
+                font-size: 1.1rem;
+            }
+
+            .profile-image-container {
+                width: 150px;
+                height: 150px;
+            }
+
+            .section-card {
+                padding: 1.5rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .header-section h1 {
+                font-size: 2rem;
+            }
+
+            .header-section .lead {
+                font-size: 1rem;
+            }
+
+            .profile-image-container {
+                width: 120px;
+                height: 120px;
+            }
+
+            .section-card {
+                border-left-width: 4px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            #objective p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="bg-primary text-white py-5 header-section">
+        <div class="container text-center">
+            <div class="profile-image-container mb-4">
+                <img src="./profile.jpg" alt="Leo Arputha Raj Profile Picture"
+                    class="img-fluid rounded-circle profile-image">
+            </div>
+            <h1 class="display-4 fw-bold">LEO ARPUTHA RAJ</h1>
+            <p class="lead">Full Stack Engineer</p>
+            <hr class="bg-white mx-auto w-25">
+            <div class="contact-info d-flex justify-content-center flex-wrap gap-4 mt-3">
+                <span><i class="fas fa-map-marker-alt"></i> Tiruppur, Tamil nadu, India</span>
+                <span><i class="fas fa-phone"></i> +91 6374543406</span>
+                <span><i class="fas fa-envelope"></i> <a href="mailto:leo006401@gmail.com"
+                        class="text-white">leo006401@gmail.com</a></span>
+                <span><i class="fab fa-github"></i> <a href="https://github.com/leoraj0405" target="_blank"
+                        class="text-white">leoraj0405</a></span>
+                <span><i class="fab fa-linkedin-in"></i> <a href="https://www.linkedin.com/in/leo-raj-930086281/" target="_blank"
+                        class="text-white">LEO RAJ</a></span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5">
+
+        <section id="objective" class="mb-5 section-card p-4 shadow-sm bg-white rounded">
+            <h2 class="section-title text-primary mb-3"><i class="fas fa-bullseye"></i> Objective</h2>
+            <p class="fs-5">Full Stack Developer with two years of experience in designing and delivering scalable web
+                applications. Proficient in building responsive and dynamic user interfaces using React.js, HTML5, CSS,
+                JavaScript, and Bootstrap. Skilled in backend development with Node.js, Express.js, NestJS, and Django,
+                with strong expertise in designing RESTful APIs and ensuring secure, efficient server-side logic.
+                Experienced in working with both relational and NoSQL databases, including MySQL and MongoDB.
+                Demonstrates solid understanding of version control with Git and effective API testing using Postman.
+                Committed to writing clean, maintainable code and contributing to high-quality, user-focused software
+                solutions.</p>
+        </section>
+
+        <section id="skills" class="mb-5 section-card p-4 shadow-sm bg-white rounded">
+            <h2 class="section-title text-primary mb-4"><i class="fas fa-code"></i> Technical Skills</h2>
+            <div class="row g-3">
+                <div class="col-md-6 col-lg-3">
+                    <div class="skill-box p-3 border rounded h-100 bg-light">
+                        <h5 class="fw-bold text-dark">Frontend:</h5>
+                        <p class="mb-0">React.js, HTML5, CSS, JavaScript, Bootstrap</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="skill-box p-3 border rounded h-100 bg-light">
+                        <h5 class="fw-bold text-dark">Databases:</h5>
+                        <p class="mb-0">MySQL, MongoDB</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="skill-box p-3 border rounded h-100 bg-light">
+                        <h5 class="fw-bold text-dark">Backend:</h5>
+                        <p class="mb-0">Node.js, Express.js, NestJS, Django</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="skill-box p-3 border rounded h-100 bg-light">
+                        <h5 class="fw-bold text-dark">Other Tools:</h5>
+                        <p class="mb-0">Git, Postman</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="mb-5 section-card p-4 shadow-sm bg-white rounded">
+            <h2 class="section-title text-primary mb-4"><i class="fas fa-laptop-code"></i> Projects</h2>
+            <div class="row g-4">
+
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm project-card-item">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-success">Hostel Attendance Management System</h5>
+                            <p class="card-subtitle mb-2 text-muted">Stack: Express.js · MySQL · EJS · Bootstrap</p>
+                            <ul>
+                                <li>Built a role-based web app for hostel admins and wardens to manage student
+                                    attendance.</li>
+                                <li>Developed session-based login, data entry, and real-time dashboard.</li>
+                                <li><i class="fas fa-external-link-alt me-2"></i> <a
+                                        href="https://atttendance-1-6777.onrender.com/sh/login" target="_blank">Live
+                                        Demo</a></li>
+                                <li><i class="fab fa-github me-2"></i> <a
+                                        href="https://github.com/leoraj0405/atttandance" target="_blank">GitHub
+                                        Repository</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm project-card-item">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-success">Expense Tracker</h5>
+                            <p class="card-subtitle mb-2 text-muted">Stack: Nest.js · MongoDB · React.js · Bootstrap</p>
+                            <ul>
+                                <li>Developed a multi-user expense tracking system with group expense sharing and
+                                    filtering.</li>
+                                <li>Implemented secure JWT-based authentication and RESTful APIs.</li>
+                                <li><i class="fab fa-github me-2"></i> <a
+                                        href="https://github.com/leoraj0405/expense-tracker" target="_blank">GitHub
+                                        Repository</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="row g-4">
+
+            <div class="col-lg-6">
+                <section id="education" class="section-card p-4 shadow-sm bg-white rounded h-100">
+                    <h2 class="section-title text-primary mb-4"><i class="fas fa-graduation-cap"></i> Education</h2>
+
+                    <div class="mb-3">
+                        <h5 class="fw-bold">Bachelor of Computer Applications (BCA)</h5>
+                        <p class="mb-1 text-muted">St. Joseph's College, Trichy</p>
+                        <span class="badge bg-secondary date-badge">June 2022 – May 2025</span>
+                    </div>
+
+                    <hr>
+
+                    <div class="mb-3">
+                        <h5 class="fw-bold">HSC & SSLC</h5>
+                        <p class="mb-1 text-muted">St. Mary’s higher secondary school, Dindigul</p>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-lg-6">
+                <section id="other-skills" class="section-card p-4 shadow-sm bg-white rounded h-100">
+                    <h2 class="section-title text-primary mb-4"><i class="fas fa-cogs"></i> Key Skills</h2>
+                    <ul class="list-unstyled d-flex flex-wrap gap-3">
+                        <li><span class="badge bg-info p-2 skill-badge">Leadership</span></li>
+                        <li><span class="badge bg-info p-2 skill-badge">Time management</span></li>
+                    </ul>
+
+                    <h2 class="section-title text-primary mt-4 mb-3"><i class="fas fa-globe"></i> Languages</h2>
+                    <ul class="list-unstyled language-list">
+                        <li>Tamil (Native)</li>
+                        <li>English (Fluent)</li>
+                    </ul>
+                </section>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="bg-light text-dark text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; <span id="year"></span> Leo Arputha Raj. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4y9l78Qy58+I3JtW5cI+G/vKxR/t2Y6rGv1W3fR5F0d/gV7zGz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0m6f7N8C6fM1FzN8B6n3PqF9O0t3/Jt/GzV5/GvJ5E1/Lp2Vw6y8xW0T3c8dF6"
+        crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
