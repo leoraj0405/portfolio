@@ -1,0 +1,348 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap');
+
+/* Color Palette */
+:root {
+    --primary-color: #007bff;
+    /* Blue */
+    --secondary-color: #6c757d;
+    /* Gray */
+    --success-color: #28a745;
+    /* Green for project titles */
+    --info-color: #17a2b8;
+    /* Teal for skills badges */
+    --dark-color: #343a40;
+    --light-bg: #f8f9fa;
+    --white: #ffffff;
+    --border-color: #e9ecef;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--light-bg);
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+/* --- Header Section --- */
+.header-section {
+    /* Using a dark background as per your screenshot */
+    background: url('./bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.header-section h1 {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.header-section .lead {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.header-section hr {
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    width: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contact-info span {
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.contact-info i {
+    margin-right: 8px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-info a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact-info a:hover {
+    color: #cce5ff !important;
+    text-decoration: underline;
+}
+
+/* Profile Image Styling */
+.profile-image-container {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 20px auto;
+    border: 5px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-image-container:hover {
+    transform: scale(1.05);
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Header Skill Icons */
+.header-skill-icons {
+    position: absolute;
+    left: 5%;
+    /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-skill-icons i {
+    color: #ffffff;
+    /* White icons */
+    opacity: 0.6;
+    /* Slightly transparent */
+    margin-bottom: 15px;
+    /* Spacing between icons */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: flex;
+    gap: 10;
+}
+
+.header-skill-icons i:hover {
+    opacity: 1;
+    /* Fully opaque on hover */
+    transform: scale(1.1);
+    /* Slight enlarge on hover */
+}
+
+
+/* --- Main Content Sections --- */
+.section-card {
+    border-left: 6px solid var(--primary-color);
+    padding: 2.5rem;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 0.75rem !important;
+}
+
+.section-card:hover {
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1) !important;
+    transform: translateY(-5px);
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--primary-color) !important;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 12px;
+    margin-bottom: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title i {
+    color: var(--primary-color);
+}
+
+/* Objective Text */
+#objective p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Skill Boxes */
+.skill-box {
+    background-color: var(--light-bg);
+    border: 1px solid var(--border-color) !important;
+    border-radius: 0.5rem !important;
+    padding: 1rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-box:hover {
+    background-color: #e9f5ff;
+    border-color: var(--primary-color) !important;
+}
+
+.skill-box h5 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.skill-box p {
+    font-size: 0.95rem;
+}
+
+/* Project Cards */
+.project-card-item {
+    border-left: 4px solid var(--success-color);
+    border-radius: 0.5rem !important;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05) !important;
+    transition: box-shadow 0.3s ease;
+}
+
+.project-card-item:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1) !important;
+}
+
+.project-card-item .card-title {
+    color: var(--success-color);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.project-card-item ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.project-card-item li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.project-card-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.project-card-item a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.project-card-item .card-body i {
+    color: var(--secondary-color);
+}
+
+/* Education Section */
+.education-item h5 {
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.education-item .date-badge {
+    background-color: var(--secondary-color) !important;
+    font-size: 0.85rem;
+    padding: 0.4em 0.7em;
+}
+
+/* Key Skills Badges */
+.skill-badge {
+    background-color: var(--info-color) !important;
+    color: var(--white);
+    padding: 0.7em 1em;
+    font-size: 0.9rem;
+    border-radius: 0.3rem;
+    transition: background-color 0.3s ease;
+}
+
+.skill-badge:hover {
+    background-color: #138496 !important;
+}
+
+/* Languages List */
+.language-list li {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color) !important;
+    color: var(--light-bg);
+    padding: 25px 0;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+
+    /* Adjust for medium and smaller screens */
+    .header-skill-icons {
+        left: 2%;
+        /* Move slightly right on smaller desktops/laptops */
+    }
+}
+
+@media (max-width: 767.98px) {
+
+    /* Bootstrap's md breakpoint for small screens */
+    .header-skill-icons {
+        display: none !important;
+        /* Hide icons on very small screens to avoid clutter */
+    }
+
+    .header-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .header-section .lead {
+        font-size: 1.1rem;
+    }
+
+    .profile-image-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .section-card {
+        padding: 1.5rem;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 10px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-section h1 {
+        font-size: 2rem;
+    }
+
+    .header-section .lead {
+        font-size: 1rem;
+    }
+
+    .profile-image-container {
+        width: 120px;
+        height: 120px;
+    }
+
+    .section-card {
+        border-left-width: 4px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    #objective p {
+        font-size: 1rem;
+    }
+}
